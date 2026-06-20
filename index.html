@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jawad Ali | Cybernetic HUD Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@200;300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet" />
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Dynamic Cyber Background Matrix -->
+    <div class="cyber-space-bg">
+      <div class="space-grid"></div>
+      <div class="scanlines"></div>
+      <div class="cosmic-glow glow-cyan"></div>
+      <div class="cosmic-glow glow-indigo"></div>
+      <div class="cosmic-glow glow-pink"></div>
+    </div>
+
+    <!-- Boot/Loader Sequence -->
+    <div id="cyber-boot-loader">
+      <div class="boot-terminal-box">
+        <div class="terminal-bar">
+          <span class="terminal-dot red"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-title">lab_initialization_protocol.sh</span>
+        </div>
+        <div class="boot-console-logs">
+          <p class="log-line text-cyan">
+            &gt; INITIALIZING BIOLOGICAL OBSERVATION SYSTEM...
+          </p>
+          <p class="log-line">
+            &gt; ESTABLISHING LABORATORY CONNECTION NODE...
+          </p>
+          <p class="log-line">&gt; DEPLOYING FIELD STUDY MATRICES...</p>
+          <p class="log-line">&gt; ANALYSIS KEY VERIFIED [VER=9.4.2]</p>
+          <p class="log-line text-pink">&gt; SPECIMEN IDENTIFIED: Jawad Ali</p>
+          <p class="log-line text-green">
+            &gt; STATUS: ACTIVE. RESEARCH SESSION STARTED...
+          </p>
+        </div>
+        <div class="boot-progress-bar">
+          <div class="boot-progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating HUD Bottom Navigation Deck -->
+    <nav class="hud-navigation-deck">
+      <div class="deck-container">
+        <a href="#hero" class="deck-item active" data-tooltip="System Core">
+          <i class="fa-solid fa-microchip"></i>
+          <span class="tooltip-text">Core</span>
+        </a>
+        <a href="#biography" class="deck-item" data-tooltip="Bio Diagnostics">
+          <i class="fa-solid fa-id-card"></i>
+          <span class="tooltip-text">Bio</span>
+        </a>
+        <a href="#skills-matrix" class="deck-item" data-tooltip="Skill Array">
+          <i class="fa-solid fa-code-fork"></i>
+          <span class="tooltip-text">Skills</span>
+        </a>
+        <a
+          href="#timeline-flow"
+          class="deck-item"
+          data-tooltip="Chrono Journey">
+          <i class="fa-solid fa-timeline"></i>
+          <span class="tooltip-text">Chrono</span>
+        </a>
+        <a
+          href="#secure-terminal"
+          class="deck-item"
+          data-tooltip="Transmit Signal">
+          <i class="fa-solid fa-tower-broadcast"></i>
+          <span class="tooltip-text">Transmit</span>
+        </a>
+      </div>
+    </nav>
+
+    <main class="hud-main-viewport">
+      <!-- 1. HERO / SYSTEM CORE SECTION -->
+      <section id="hero" class="hud-viewport-section hero-hud-section">
+        <div class="hud-grid-container">
+          <div class="hero-scanner-node">
+            <div class="radar-hud-wrapper">
+              <div class="radar-scanline"></div>
+              <div class="radar-ring outer-ring"></div>
+              <div class="radar-ring middle-ring"></div>
+              <div class="radar-ring inner-ring"></div>
+              <div class="coordinates-overlay">
+                <span class="coord lat">LAT: 35.6762° N</span>
+                <span class="coord lng">LNG: 139.6503° E</span>
+              </div>
+              <div class="radar-image-container">
+                <img
+                  src="images/profile.jpg"
+                  alt="Jawad Ali"
+                  class="radar-profile-pic"
+                  onerror="
+                    this.src =
+                      'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?q=80&w=400&auto=format&fit=crop'
+                  " />
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-console-stats">
+            <div class="status-alert-node">
+              <span class="alert-pulse-light"></span>
+              <span class="alert-label">LAB_STATUS: ACTIVE // STABLE</span>
+            </div>
+
+            <h1 class="hud-glitch-title" data-text="Jawad Ali">Jawad Ali</h1>
+            <h2 class="hud-cyber-subtitle">// CORE: BS Zoology</h2>
+
+            <div class="terminal-spec-box">
+              <div class="spec-row">
+                <span class="spec-label">SPECIMEN NAME:</span>
+                <span class="spec-value text-cyan">Jawad Ali</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">FIELD:</span>
+                <span class="spec-value text-indigo">BS Zoology</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">RESEARCH METHOD:</span>
+                <span class="spec-value text-pink">BIO_ANALYSIS</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">OBSERVATION RATE:</span>
+                <span class="spec-value text-green" id="latency-val">12ms</span>
+              </div>
+            </div>
+
+            <div class="hud-action-triggers">
+              <a href="" download class="hud-btn trigger-primary-glow">
+                <span class="btn-text">DOWNLOAD CV</span>
+                <i class="fa-solid fa-file-arrow-down"></i>
+              </a>
+              <a
+                href="#secure-terminal"
+                class="hud-btn trigger-secondary-glass">
+                <span class="btn-text">TRANSMIT SIGNAL</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. BIOGRAPHY / DIAGNOSTICS SECTION -->
+      <section id="biography" class="hud-viewport-section">
+        <div class="hud-section-header">
+          <div class="header-line"></div>
+          <h2 class="hud-section-title">
+            <span class="accent-number">01.</span> ZOOLOGY PROFILE
+          </h2>
+          <span class="hud-sub-label">FIELD_STUDY_RECORD</span>
+        </div>
+
+        <div class="hud-grid-layout col-2 glass-panels-container">
+          <div class="hud-glass-card telemetry-card">
+            <div class="card-hud-decal top-right"></div>
+            <div class="card-hud-decal bottom-left"></div>
+            <h3 class="card-hud-title">
+              <i class="fa-solid fa-brain text-cyan"></i> BIOLOGICAL PROFILE SUMMARY
+            </h3>
+            <p class="bio-text-paragraph">
+              Jawad Ali is a dedicated undergraduate student currently pursuing
+              a Bachelor of Science (BS) degree in Zoology. He has a strong
+              academic interest in animal biology, biodiversity, and ecological
+              systems. Throughout his studies, he is gaining foundational
+              knowledge in areas such as physiology, genetics, and environmental
+              biology. Jawad is focused on building a career in the biological
+              sciences and is actively engaged in developing his understanding
+              of zoological research and modern biological concepts.
+            </p>
+
+            <div class="diagnostics-bar-group">
+            </div>
+            <div class="diag-bar-wrapper">
+              <div class="diag-bar-labels">
+                <span>Matric Markes</span>
+                <span>88%</span>
+              </div>
+              <div class="diag-bar-outer">
+                <div class="diag-bar-inner bar-indigo" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="diag-bar-wrapper">
+              <div class="diag-bar-labels">
+                <span>Intermediat</span>
+                <span>85%</span>
+              </div>
+              <div class="diag-bar-outer">
+                <div class="diag-bar-inner bar-pink" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hud-glass-card telemetry-card">
+          <div class="card-hud-decal top-left"></div>
+          <div class="card-hud-decal bottom-right"></div>
+          <h3 class="card-hud-title">
+            <i class="fa-solid fa-server text-pink"></i> BIO DATA & CONTACT INFORMATION
+          </h3>
+
+          <div class="metadata-node-list">
+            <div class="meta-node-item">
+              <div class="meta-node-icon">
+                <i class="fa-solid fa-map-pin"></i>
+              </div>
+              <div class="meta-node-content">
+                <span class="meta-node-title">LOCATION</span>
+                <span class="meta-node-desc text-cyan"> Lakki Marwat</span>
+              </div>
+            </div>
+            <div class="meta-node-item">
+              <div class="meta-node-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="meta-node-content">
+                <span class="meta-node-title">SECURE COMMUNICATIONS</span>
+                <span class="meta-node-desc text-indigo"
+                  >jawadalimwt@gmail.com</span
+                >
+              </div>
+            </div>
+            <div class="meta-node-item">
+              <div class="meta-node-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="meta-node-content">
+                <span class="meta-node-title">CONTACT</span>
+                <span class="meta-node-desc text-pink">03430360250</span>
+              </div>
+            </div>
+            <div class="meta-node-item">
+            </div>
+
+            <div class="meta-social-node">
+              <span class="socials-label">SOCIAL LINK:</span>
+              <div class="social-hud-links">
+                <a
+                  href="https://www.instagram.com/marwatjawadali?igsh=eHh5OTh1aG5rdGRi"
+                  target="_blank"
+                  class="social-hud-btn"
+                  title="Instagram"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.facebook.com/share/194zKMbKbC/"
+                  target="_blank"
+                  class="social-hud-btn"
+                  title="Facebook"
+                  ><i class="fa-brands fa-facebook"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. SKILLS MATRIX SECTION -->
+      <section id="skills-matrix" class="hud-viewport-section">
+        <div class="hud-section-header">
+          <div class="header-line"></div>
+          <h2 class="hud-section-title">
+            <span class="accent-number">02.</span> CORE MATRIX
+          </h2>
+          <span class="hud-sub-label">SKILL_HARDWARE_ARRAY</span>
+        </div>
+
+        <div class="skills-array-wrapper">
+          <div class="skills-hardware-grid">
+            <div class="skill-chip-node" data-skill-name="Public Speaking">
+              <div class="chip-port-light"></div>
+              <div class="chip-label">Public Speaking</div>
+              <div class="chip-connection-wires">
+                <span class="wire wire-1"></span>
+                <span class="wire wire-2"></span>
+              </div>
+            </div>
+
+            <div class="skill-chip-node" data-skill-name="Data Analysis">
+              <div class="chip-port-light"></div>
+              <div class="chip-label">Data Analysis</div>
+              <div class="chip-connection-wires">
+                <span class="wire wire-1"></span>
+                <span class="wire wire-2"></span>
+              </div>
+            </div>
+
+            <div class="skill-chip-node" data-skill-name="Research">
+              <div class="chip-port-light"></div>
+              <div class="chip-label">Research</div>
+              <div class="chip-connection-wires">
+                <span class="wire wire-1"></span>
+                <span class="wire wire-2"></span>
+              </div>
+            </div>
+
+            <div class="skill-chip-node" data-skill-name="Leadership">
+              <div class="chip-port-light"></div>
+              <div class="chip-label">Leadership</div>
+              <div class="chip-connection-wires">
+                <span class="wire wire-1"></span>
+                <span class="wire wire-2"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. CHRONO JOURNEY (EXPERIENCE & EDUCATION) -->
+      <section id="timeline-flow" class="hud-viewport-section">
+        <div class="hud-section-header">
+          <div class="header-line"></div>
+          <h2 class="hud-section-title">
+            <span class="accent-number">03.</span> CHRONO JOURNEY
+          </h2>
+          <span class="hud-sub-label">HISTORY_LOG_STREAM</span>
+        </div>
+
+        <div class="timeline-double-grid">
+
+          <!-- Education Column -->
+          <div class="timeline-hud-column">
+            <h3 class="column-hud-header">
+              <i class="fa-solid fa-graduation-cap text-pink"></i> EDUCATION
+            </h3>
+            <div class="server-racks-container" id="education-rack-list">
+              <div class="server-rack-card">
+                <div class="rack-status-light active-pink"></div>
+                <div class="rack-content">
+                  <div class="rack-header">
+                    <h4 class="rack-title">Matric</h4>
+                    <!-- <span class="rack-tag pink">Suffah Public High School Tajori Lakki Marwat</span> -->
+                  </div>
+                  <div class="rack-meta">YEAR: 2021</div>
+                  <p class="rack-desc"></p>
+                </div>
+                <div class="rack-details-pane">
+                  <span class="pane-tech-spec"
+                    >ACADEMIC_PORT: Suffah Public High School Tajori Lakki
+                    Marwat</span
+                  >
+                  <span class="pane-tech-spec">MARKS: 988/1100</span>
+                  <span class="pane-tech-spec">VERIFIED // ARCHIVED</span>
+                </div>
+              </div>
+            </div>
+            <div class="server-racks-container" id="education-rack-list">
+              <div class="server-rack-card">
+                <div class="rack-status-light active-pink"></div>
+                <div class="rack-content">
+                  <div class="rack-header">
+                    <h4 class="rack-title">FS.c Pre-Medical</h4>
+                    <!-- <span class="rack-tag pink">Suffah Public High School Tajori Lakki Marwat</span> -->
+                  </div>
+                  <div class="rack-meta">YEAR: 2023</div>
+                  <p class="rack-desc"></p>
+                </div>
+                <div class="rack-details-pane">
+                  <span class="pane-tech-spec"
+                    >ACADEMIC_PORT: Suffah Public High School Tajori Lakki
+                    Marwat</span
+                  >
+                  <span class="pane-tech-spec">MARKES: 892/1100</span>
+                  <span class="pane-tech-spec">VERIFIED // ARCHIVED</span>
+                </div>
+              </div>
+            </div>
+            <div class="server-racks-container" id="education-rack-list">
+              <div class="server-rack-card">
+                <div class="rack-status-light active-pink"></div>
+                <div class="rack-content">
+                  <div class="rack-header">
+                    <h4 class="rack-title">BS Zoology</h4>
+                    <!-- <span class="rack-tag pink">University Of Science And Technology Bannu</span> -->
+                  </div>
+                  <div class="rack-meta">YEAR: 2027</div>
+                  <p class="rack-desc"></p>
+                </div>
+                <div class="rack-details-pane">
+                  <span class="pane-tech-spec"
+                    >ACADEMIC_PORT: Suffah Public High School Tajori Lakki
+                    Marwat</span
+                  >
+                  <span class="pane-tech-spec">CGPA 4</span>
+                  <span class="pane-tech-spec">VERIFIED // ARCHIVED</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 7. SECURE SIGNAL TRANSMISSION (CONTACT) -->
+      <section id="secure-terminal" class="hud-viewport-section">
+        <div class="hud-section-header">
+          <div class="header-line"></div>
+          <h2 class="hud-section-title">
+            <span class="accent-number">04.</span> SEND MESSAGE
+          </h2>
+          <span class="hud-sub-label">COMMUNICATION_GATEWAY</span>
+        </div>
+
+        <div class="secure-transmission-grid col-2">
+          <div class="terminal-instructions-card">
+            <h3 class="instructions-title">
+              <i class="fa-solid fa-triangle-exclamation text-pink"></i> COMMUNICATION INSTRUCTIONS
+            </h3>
+            <p class="instructions-para">
+              Enter your details in the form on the right to submit your message. All inquiries are reviewed and processed promptly and forwarded to the appropriate contact channel for response
+            </p>
+
+            <div class="cyber-security-badge">
+              <div class="lock-shield"><i class="fa-solid fa-lock"></i></div>
+              <div class="badge-text">
+                <strong>PAYLOAD ENCRYPTED</strong>
+                <span>SECURE SSL // TLS GATEWAY</span>
+              </div>
+            </div>
+
+            <div class="diagnostics-terminal-feed">
+              <div class="feed-header">
+                <span>COMMUNICATION FEED</span>
+              </div>
+              <div class="feed-console" id="feed-console-logs">
+                <p class="feed-line">[INFO] Awaiting user message submission...</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hud-glass-card transmission-panel">
+            <form id="cyber-transmission-form" class="secure-transmission-form">
+              <div class="form-row">
+                <div class="input-hud-group">
+                  <label for="sig-name" class="input-hud-label"
+                    >// YOUR_NAME</label
+                  >
+                  <div class="input-hud-wrapper">
+                    <input
+                      type="text"
+                      id="sig-name"
+                      class="input-hud-element"
+                      placeholder="Full Name"
+                      required />
+                    <div class="input-glow-line"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="input-hud-group">
+                  <label for="sig-email" class="input-hud-label"
+                    >// YOUR_EMAIL</label
+                  >
+                  <div class="input-hud-wrapper">
+                    <input
+                      type="email"
+                      id="sig-email"
+                      class="input-hud-element"
+                      placeholder="youremail@example.com"
+                      required />
+                    <div class="input-glow-line"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="input-hud-group">
+                  <label for="sig-message" class="input-hud-label"
+                    >// YOUR_MESSAGE</label
+                  >
+                  <div class="input-hud-wrapper">
+                    <textarea
+                      id="sig-message"
+                      class="input-hud-element text-area"
+                      placeholder="Write your message..."
+                      required></textarea>
+                    <div class="input-glow-line"></div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="cyber-submit-trigger"
+                id="submit-signal-btn">
+                <span class="btn-background-glow"></span>
+                <span class="btn-inner-content">
+                  <i class="fa-solid fa-tower-broadcast"></i>
+                  <span>SUBMIT_MESSAGE</span>
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER / CONTEXT SIGN OFF -->
+      <footer class="hud-viewport-footer">
+        <div class="footer-hud-lines"></div>
+        <div class="footer-flex-container">
+          <div class="footer-brand">// Jawad Ali // ACADEMIC PORTFOLIO v1.0</div>
+          <div class="footer-copyright">
+            &copy; <span id="hud-current-year">2026</span> ALL TRANSMISSIONS
+            CLASSIFIED.
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Custom Logic Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
